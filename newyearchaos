@@ -1,0 +1,42 @@
+
+
+https://www.hackerrank.com/challenges/new-year-chaos/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+    int n,t,a[100000],k,j=0,c=0,k1;
+    scanf("%d",&t);
+    while(t!=0)
+    {
+        j=0;n=0;c=0;k=1;
+        scanf("%d\n",&n);
+        for(int i=1;i<=n;i++)
+        scanf("%d",&a[i]);
+        for(int i=1;i<=n;i++)
+        {
+            if(a[i]-i>2)
+            {
+                printf("Too chaotic\n");
+                k=0;
+                break;
+            }
+            if(k==0)break;
+            for(j=1;j<i;j++)
+            {
+                if(a[j]>a[i])
+                c++;
+            }
+        }
+        if(k!=0)
+        printf("%d\n",c);
+        t--;
+    }
+    return 0;
+}
